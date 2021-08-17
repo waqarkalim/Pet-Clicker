@@ -10,6 +10,8 @@ import useColorScheme from "../hooks/useColorScheme";
 // import Svg, { Use, Image, SvgUri } from "react-native-svg";
 // import * as Svg from "react-native-svg";
 
+import { Dimensions } from "react-native";
+
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 const logo = require("../assets/logo/logo.png");
@@ -18,6 +20,13 @@ console.log(logo);
 export default function WelcomeScreen({ navigation }) {
 	const colorScheme = useColorScheme();
 	useStatusBar("light-content");
+
+	const win = Dimensions.get("window");
+	const width = win.width * 1.2;
+	console.log(width);
+	const height = win.height * 1.2;
+
+	const sizeToUseForLogo = width < height ? width : height;
 
 	const styles = StyleSheet.create({
 		container: {
@@ -36,8 +45,10 @@ export default function WelcomeScreen({ navigation }) {
 			justifyContent: "center",
 		},
 		logo: {
-			width: 500,
-			height: 500,
+			// width: 500,
+			// height: 500,
+			width: sizeToUseForLogo,
+			height: sizeToUseForLogo,
 		},
 		subtitle: {
 			fontSize: 24,
@@ -47,7 +58,7 @@ export default function WelcomeScreen({ navigation }) {
 		},
 		buttonContainer: {
 			padding: 20,
-			paddingBottom: 100,
+			// paddingBottom: 30,
 			width: "100%",
 		},
 	});

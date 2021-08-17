@@ -42,6 +42,8 @@ export default function LoginScreen({ navigation }) {
 
 	const styles = StyleSheet.create({
 		container: {
+			flex: 1,
+			justifyContent: "center",
 			padding: 15,
 			backgroundColor: Colors[colorScheme].background,
 		},
@@ -94,7 +96,7 @@ export default function LoginScreen({ navigation }) {
 					autoCapitalize="none"
 					keyboardType="email-address"
 					textContentType="emailAddress"
-					autoFocus={true}
+					// autoFocus={true}
 				/>
 				<FormField
 					name="password"

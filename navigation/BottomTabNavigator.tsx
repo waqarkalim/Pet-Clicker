@@ -16,7 +16,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList } from '../types';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Ionicon from 'react-native-vector-icons/Ionicons';
@@ -53,15 +53,20 @@ const AdMobBannerTest = () => <AdMobBanner
 
 // ==========================================================================================
 
+async function handleSignOut() {
+  try {
+    await logout();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
-  async function handleSignOut() {
-    try {
-      await logout();
-    } catch (error) {
-      console.log(error);
-    }
-  }
+
+  React.useEffect(() => {
+
+  }, []);
 
   return (
     <>
@@ -115,7 +120,7 @@ export default function BottomTabNavigator() {
             tabBarButton: (props) => (<TouchableOpacity  {...props} />)
           }}
         />
-        <BottomTab.Screen
+        {/* <BottomTab.Screen
           name="TabThree"
           component={TabThreeScreen}
           options={{
@@ -123,7 +128,7 @@ export default function BottomTabNavigator() {
             tabBarIcon: ({ color, size }) => <><Ionicon name="log-out" size={size} color={color} /><Text>Sign Out</Text></>,
             tabBarButton: (props) => (<TouchableOpacity  {...props} onPress={() => handleSignOut()} />)
           }}
-        />
+        /> */}
       </BottomTab.Navigator>
       <AdMobBannerTest />
     </>
@@ -156,6 +161,12 @@ function TabOneNavigator() {
           headerStyle: {
             backgroundColor: Colors[colorScheme].secondary,
           },
+          headerRight: ({ tintColor }) =>
+            <TouchableOpacity onPress={() => handleSignOut()} style={{ paddingRight: 20 }}>
+              <React.Fragment>
+                <Text>Sign Out</Text>
+              </React.Fragment>
+            </TouchableOpacity>
         }}
       />
     </TabOneStack.Navigator>
@@ -176,10 +187,16 @@ function TabTwoNavigator() {
             textAlign: "center",
             color: Colors[colorScheme].white
           },
-          headerTitle: 'Remove Ads for ONLY $2.99',
+          headerTitle: 'Remove Ads for $2.99',
           headerStyle: {
             backgroundColor: Colors[colorScheme].secondary,
           },
+          headerRight: ({ tintColor }) =>
+            <TouchableOpacity onPress={() => handleSignOut()} style={{ paddingRight: 20 }}>
+              <React.Fragment>
+                <Text>Sign Out</Text>
+              </React.Fragment>
+            </TouchableOpacity>
         }}
       />
     </TabTwoStack.Navigator>

@@ -81,10 +81,10 @@ JavaScript, React, React Native, Expo, Firebase
 
 If you have any feedback, please reach out to me at waqaar.199@gmail.com
 
-<div style="background-color:white;">
+<!-- <div style="background-color:white;">
 <img src="https://github.com/waqarkalim/Pet-Clicker/blob/master/assets/logo/logo.png" width="200" height="auto" />.
 </div>
-
+ -->
 <!-- ![Logo](https://github.com/waqarkalim/Pet-Clicker/blob/master/assets/logo/logo.png) -->
 
     

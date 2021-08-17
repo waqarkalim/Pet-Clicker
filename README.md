@@ -42,7 +42,7 @@ Start the app
   
 ## Screenshots
 
-##### Splash Screen
+##### Welcome Screen
 <img src="https://github.com/waqarkalim/Pet-Clicker/blob/master/assets/screenshots/SplashScreen.png" width="200" height="auto" />.
 ##### Login Screen
 <img src="https://github.com/waqarkalim/Pet-Clicker/blob/master/assets/screenshots/LoginScreen.png" width="200" height="auto" />.
